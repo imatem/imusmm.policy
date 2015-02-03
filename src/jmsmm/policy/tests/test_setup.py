@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """Setup/installation tests for this package."""
 
-from jmsmm.policy.testing import IntegrationTestCase
-# from plone.app.event.base import default_timezone
 from Products.CMFCore.utils import getToolByName
+from jmsmm.policy.testing import IntegrationTestCase
 from zope.component import getMultiAdapter
 
 import unittest2 as unittest
@@ -31,9 +30,6 @@ class TestsInstall(IntegrationTestCase):
         self.assertEqual(
             self.portal.getProperty('description'),
             "SMM")
-
-    # def test_default_timezone(self):
-    #     self.assertEqual(default_timezone(), 'Mexico/General')
 
     def test_default_language(self):
         # acording to documentation this must be in afterSetUp()

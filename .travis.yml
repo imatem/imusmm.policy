@@ -1,0 +1,12 @@
+language: python
+python: 2.7
+install:
+  - mkdir -p buildout-cache/downloads
+  - python bootstrap.py -c travis.cfg
+  - bin/buildout -N -t 3 -c travis.cfg
+script: bin/test && bin/code-analysis
+notifications:
+  email:
+    recipients:
+      - adriana.rv@gmail.com
+      - gil.cano@gmail.com

@@ -18,7 +18,7 @@ long_description = \
     read('docs', 'LICENSE.rst')
 
 setup(
-    name='jmsmm.policy',
+    name='imusmm.policy',
     version=version,
     description="Policy for site.",
     long_description=long_description,
@@ -30,10 +30,10 @@ setup(
     keywords='Plone Python',
     author='Informática Académica',
     author_email='computoacademico@im.unam.mx',
-    url='https://github.com/imatem/jmsmm.policy',
+    url='https://github.com/imatem/imusmm.policy',
     license='BSD',
     packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['jmsmm'],
+    namespace_packages=['imusmm'],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,

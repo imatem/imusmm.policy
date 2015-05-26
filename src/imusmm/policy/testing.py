@@ -19,24 +19,24 @@ class PolicyLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """Set up Zope."""
         # Load ZCML
-        import jmsmm.policy
-        self.loadZCML(package=jmsmm.policy)
+        import imusmm.policy
+        self.loadZCML(package=imusmm.policy)
 
     def setUpPloneSite(self, portal):
         """Set up Plone."""
         # Install into Plone site using portal_setup
-        applyProfile(portal, 'jmsmm.policy:default')
+        applyProfile(portal, 'imusmm.policy:default')
 
     def tearDownZope(self, app):
         """Tear down Zope."""
-        z2.uninstallProduct(app, 'jmsmm.policy')
+        z2.uninstallProduct(app, 'imusmm.policy')
 
 
 FIXTURE = PolicyLayer()
 INTEGRATION_TESTING = IntegrationTesting(
-    bases=(FIXTURE,), name="JMSMMPolicyLayer:Integration")
+    bases=(FIXTURE,), name="IMUSMMPolicyLayer:Integration")
 FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(FIXTURE,), name="JMSMMPolicyLayer:Functional")
+    bases=(FIXTURE,), name="IMUSMMPolicyLayer:Functional")
 
 
 class IntegrationTestCase(unittest.TestCase):

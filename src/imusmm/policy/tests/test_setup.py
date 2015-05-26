@@ -2,14 +2,14 @@
 """Setup/installation tests for this package."""
 
 from Products.CMFCore.utils import getToolByName
-from jmsmm.policy.testing import IntegrationTestCase
+from imusmm.policy.testing import IntegrationTestCase
 from zope.component import getMultiAdapter
 
 import unittest2 as unittest
 
 
 class TestsInstall(IntegrationTestCase):
-    """Test installation of jmsmm.policy into Plone."""
+    """Test installation of imusmm.policy into Plone."""
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -17,9 +17,9 @@ class TestsInstall(IntegrationTestCase):
         self.request = self.layer['request']
 
     def test_product_installed(self):
-        """Test if jmsmm.policy is installed in portal_quickinstaller."""
+        """Test if imusmm.policy is installed in portal_quickinstaller."""
         installer = getToolByName(self.portal, 'portal_quickinstaller')
-        self.assertTrue(installer.isProductInstalled('jmsmm.policy'))
+        self.assertTrue(installer.isProductInstalled('imusmm.policy'))
 
     def test_portal_title(self):
         self.assertEqual(
